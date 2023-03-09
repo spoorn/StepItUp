@@ -1,0 +1,8 @@
+{
+  // True to enable Step Up and disable Auto Jump, false to disable Step Up and allow Auto Jump [default = true]
+  "enableStepUp": true,
+  /* True to enable Step Up while sneaking (only if enableStepUp = true), false to disable 
+     Step Up when sneaking [default = false]
+  */
+  "enableStepUpWhenSneaking": false
+}
