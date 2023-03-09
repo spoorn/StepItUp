@@ -14,6 +14,9 @@
   "entrypoints": {
     "client": [
       "org.spoorn.stepitup.fabric.StepItUpFabric"
+    ],
+    "modmenu": [
+      "org.spoorn.stepitup.fabric.config.StepItUpModMenuApiImpl"
     ]
   },
   "mixins": [
@@ -23,5 +26,11 @@
     "fabricloader": "*",
     "minecraft": ">=1.19",
     "cloth-config2": "*"
+  },
+  "suggests": {
+    "modmenu": "*"
+  },
+  "breaks": {
+    "modmenu": "<=1.14.13"
   }
 }

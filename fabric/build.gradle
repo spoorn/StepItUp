@@ -29,6 +29,9 @@ dependencies {
     modApi("me.shedaniel.cloth:cloth-config-fabric:${project.cloth_config_version}") {
         exclude(group: "net.fabricmc.fabric-api")
     }
+
+    // Mod Menu
+    modApi("com.terraformersmc:modmenu:${project.modmenu_version}")
 }
 
 repositories {
