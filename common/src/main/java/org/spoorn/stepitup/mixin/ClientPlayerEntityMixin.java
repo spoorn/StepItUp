@@ -21,16 +21,17 @@ public abstract class ClientPlayerEntityMixin {
 
     @Shadow private boolean autoJumpEnabled;
 
+    // Step up, should apply before autojump thereby "disabling" autojump
     @Inject(method = "move", at = @At(value = "HEAD"))
     private void enableStepUp(MovementType movementType, Vec3d movement, CallbackInfo ci) {
         Entity thisEntity = ((Entity) (Object) this);
         if (ModConfig.get().enableStepUp && (!this.isSneaking() || ModConfig.get().enableStepUpWhenSneaking)) {
             if (originalStepHeight < 0) {
-                originalStepHeight = thisEntity.stepHeight;
+                originalStepHeight = thisEntity.getStepHeight();
             }
-            thisEntity.stepHeight = 1.25f;
+            thisEntity.setStepHeight(1.25f);
         } else {
-            thisEntity.stepHeight = originalStepHeight;
+            thisEntity.setStepHeight(originalStepHeight);
         }
     }
     
